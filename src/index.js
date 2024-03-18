@@ -3,7 +3,9 @@ const app = express();
 const port = 8080;
 const mongoose = require("mongoose");
 const authRoutes = require("./routes/authRoutes");
+const User = require("./models/User");
 
+app.use(express.json());
 app.use(authRoutes);
 
 const mongoUri =
