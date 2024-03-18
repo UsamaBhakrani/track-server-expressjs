@@ -7,8 +7,8 @@ const User = require("./models/User");
 const auth = require("./middleware/requireAuth");
 const requireAuth = require("./middleware/requireAuth");
 
-app.use(authRoutes);
 app.use(express.json());
+app.use(authRoutes);
 
 const mongoUri =
   "mongodb+srv://oracle:773311889922@nodeexpressproject.kxoaosu.mongodb.net/track-server?retryWrites=true&w=majority&appName=NodeExpressProject";
