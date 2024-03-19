@@ -4,12 +4,14 @@ const app = express();
 const port = 8080;
 const mongoose = require("mongoose");
 const authRoutes = require("./routes/authRoutes");
+const trackRoutes = require("./routes/trackRoutes");
 const requireAuth = require("./middleware/requireAuth");
 
 app.use(express.json());
 app.use(authRoutes);
+app.use(trackRoutes);
 
-const mongoUri = process.env.MONGO_URI
+const mongoUri = process.env.MONGO_URI;
 
 mongoose
   .connect(mongoUri)
